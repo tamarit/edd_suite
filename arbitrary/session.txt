@@ -1,0 +1,21 @@
+> edd:dd("arbitrary:test()").
+Length: 34
+Prefix:26375145977752200703
+Suffix:20070321669904793600
+Please, insert a list of trusted functions [m1:f1/a1, m2:f2/a2 ...]: 
+arbitrary:pow(5760, 576, 1) = 2637514597775220070321669904793600? [y/n/t/d/i/s/u/a]: d
+arbitrary:pow(5, 1152, 1) = 2637514597775220070321669904793600? [y/n/t/d/i/s/u/a]: d
+arbitrary:pow(3317760, 288, 1) = 2637514597775220070321669904793600? [y/n/t/d/i/s/u/a]: d
+arbitrary:pow(5, 1152) = 2637514597775220070321669904793600? [y/n/t/d/i/s/u/a]: d
+arbitrary:pow(955514880, 144, 1) = 2637514597775220070321669904793600? [y/n/t/d/i/s/u/a]: d
+arbitrary:pow(137594142720, 72, 1) = 2637514597775220070321669904793600? [y/n/t/d/i/s/u/a]: d
+arbitrary:pow(9906778275840, 36, 1) = 2637514597775220070321669904793600? [y/n/t/d/i/s/u/a]: d
+arbitrary:pow(356644017930240, 18, 1) = 2637514597775220070321669904793600? [y/n/t/d/i/s/u/a]: d
+arbitrary:pow(4, 6) = 1152? [y/n/t/d/i/s/u/a]: n
+arbitrary:pow(24, 2, 24) = 1152? [y/n/t/d/i/s/u/a]: n
+arbitrary:pow(48, 1, 24) = 1152? [y/n/t/d/i/s/u/a]: y
+Call to a function that contains an error:
+arbitrary:pow(24, 2, 24) = 1152
+Please, revise the third clause:
+pow(B, P, Acc) when P rem 2 == 0 ->
+    pow(B * P, P div 2, Acc).

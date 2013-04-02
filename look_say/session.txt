@@ -1,0 +1,10 @@
+> edd:dd("look_say:main()").
+Please, insert a list of trusted functions [m1:f1/a1, m2:f2/a2 ...]: 
+look_say:look_and_say("221", 49, 3, []) = "122213"? [y/n/t/d/i/s/u/a]: d
+look_say:look_and_say("21", 50, 1, "13") = "122213"? [y/n/t/d/i/s/u/a]: n
+look_say:look_and_say([], 49, 1, "2213") = "122213"? [y/n/t/d/i/s/u/a]: n
+Call to a function that contains an error:
+look_say:look_and_say([], 49, 1, "2213") = "122213"
+Please, revise the first clause:
+look_and_say([], Current, N, Acc) ->
+    [Current, $1 + N | Acc].

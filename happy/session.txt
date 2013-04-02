@@ -1,0 +1,16 @@
+> edd:dd("happy:main()").
+[1,2,3] 
+Please, insert a list of trusted functions [m1:f1/a1, m2:f2/a2 ...]: 
+happy:is_happy(81) = true? [y/n/t/d/i/s/u/a]: d
+happy:is_happy(9) = true? [y/n/t/d/i/s/u/a]: n
+happy:is_happy(89) = true? [y/n/t/d/i/s/u/a]: d
+happy:is_happy(145) = true? [y/n/t/d/i/s/u/a]: d
+happy:is_happy(58) = true? [y/n/t/d/i/s/u/a]: d
+happy:is_happy(42) = true? [y/n/t/d/i/s/u/a]: d
+happy:is_happy(37) = true? [y/n/t/d/i/s/u/a]: d
+happy:is_happy(20) = true? [y/n/t/d/i/s/u/a]: n
+happy:is_happy(4) = true? [y/n/t/d/i/s/u/a]: n
+Call to a function that contains an error:
+happy:is_happy(4) = true
+Please, revise the second clause:
+is_happy(4) -> true.

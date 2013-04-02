@@ -1,0 +1,16 @@
+> edd:dd("ternary:test()").
+Please, insert a list of trusted functions [m1:f1/a1, m2:f2/a2 ...]: 
+ternary:sub([-1, -1, -1, -1, 0, -1, -1], [1, -1, 1, 1, -1]) = {error, match_fail}? [y/n/t/d/i/s/u/a]: d
+ternary:add([-1, -1, -1, -1, 0, -1, -1], [-1, 1, -1, -1, 1]) = {error, match_fail}? [y/n/t/d/i/s/u/a]: d
+ternary:to_ternary(-436) = [-1, -1, -1, -1, 0, -1, -1]? [y/n/t/d/i/s/u/a]: n
+ternary:to_ternary(16, [0, 1, 1]) = [1, 1, 1, 1, 0, 1, 1]? [y/n/t/d/i/s/u/a]: y
+ternary:to_ternary(436, []) = [1, 1, 1, 1, 0, 1, 1]? [y/n/t/d/i/s/u/a]: n
+ternary:to_ternary(2, [1, 1, 0, 1, 1]) = [1, 1, 1, 1, 0, 1, 1]? [y/n/t/d/i/s/u/a]: n
+ternary:to_ternary(0, [1, 1, 1, 1, 0, 1, 1]) = [1, 1, 1, 1, 0, 1, 1]? [y/n/t/d/i/s/u/a]: y
+ternary:to_ternary(1, [1, 1, 1, 0, 1, 1]) = [1, 1, 1, 1, 0, 1, 1]? [y/n/t/d/i/s/u/a]: y
+Call to a function that contains an error:
+ternary:to_ternary(2, [1, 1, 0, 1, 1]) = [1, 1, 1, 1, 0, 1, 1]
+Please, revise the fourth clause:
+to_ternary(N, Acc) ->
+    to_ternary((N + 1) div 3, [1 | Acc]).
+ok

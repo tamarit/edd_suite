@@ -1,0 +1,25 @@
+> edd:dd("rps:play()").             
+What is your move? (R,P,S,Q) R
+Your move is Rock.
+My move is Scissors
+You win!
+What is your move? (R,P,S,Q) R
+Your move is Rock.
+My move is Scissors
+You win!
+What is your move? (R,P,S,Q) R
+Your move is Rock.
+My move is Rock
+You win!
+What is your move? (R,P,S,Q) Q
+Good bye!
+Please, insert a list of trusted functions [m1:f1/a1, m2:f2/a2 ...]: 
+rps:loop([3, 1, 1]) = ok? [y/n/t/d/i/s/u/a]: d
+rps:loop([2, 1, 1]) = ok? [y/n/t/d/i/s/u/a]: d
+rps:beats(82, 83) = true? [y/n/t/d/i/s/u/a]: y
+rps:play_to_string(83) = "Scissors"? [y/n/t/d/i/s/u/a]: t
+rps:beats(82, 82) = true? [y/n/t/d/i/s/u/a]: n
+Call to a function that contains an error:
+rps:beats(82, 82) = true
+Please, revise the second clause:
+beats($R, $R) -> true.

@@ -1,0 +1,20 @@
+> edd:dd("dutch:main(20)").
+The starting random sequence is [red,blue,red,red,blue,white,blue,red,blue,
+                                 white,red,white,white,white,red,blue,red,
+                                 white,red,red];
+The ordered sequence is [red,red,red,red,red,red,red,red,red,white,white,
+                         white,white,white,white,white,white,white,white,
+                         white].
+Please, insert a list of trusted functions [m1:f1/a1, m2:f2/a2 ...]: 
+dutch:is_dutch([red, blue, red, red, blue, white, blue, red, blue, white, red, white, white, white, red, blue, red, white, red, red]) = false? [y/n/t/d/i/s/u/a]: y
+dutch:random_balls(16, [red, white, red, red]) = [red, blue, red, red, blue, white, blue, red, blue, white, red, white, white, white, red, blue, red, white, red, red]? [y/n/t/d/i/s/u/a]: t
+dutch:dutch([red, red, red, red], [white], [white, white, white, white], [white, red, white, white, white, red, blue, red, white, red, red]) = [red, red, red, red, red, red, red, red, red, white, white, white, white, white, white, white, white, white, white, white]? [y/n/t/d/i/s/u/a]: n
+dutch:dutch([red, red, red, red, red, red], [white, white, white, white, white], [white, white, white, white], [blue, red, white, red, red]) = [red, red, red, red, red, red, red, red, red, white, white, white, white, white, white, white, white, white, white, white]? [y/n/t/d/i/s/u/a]: n
+dutch:dutch([red, red, red, red, red, red, red], [white, white, white, white, white, white], [white, white, white, white, white], [red, red]) = [red, red, red, red, red, red, red, red, red, white, white, white, white, white, white, white, white, white, white, white]? [y/n/t/d/i/s/u/a]: y
+dutch:dutch([red, red, red, red, red, red, red], [white, white, white, white, white], [white, white, white, white, white], [white, red, red]) = [red, red, red, red, red, red, red, red, red, white, white, white, white, white, white, white, white, white, white, white]? [y/n/t/d/i/s/u/a]: y
+dutch:dutch([red, red, red, red, red, red], [white, white, white, white, white], [white, white, white, white, white], [red, white, red, red]) = [red, red, red, red, red, red, red, red, red, white, white, white, white, white, white, white, white, white, white, white]? [y/n/t/d/i/s/u/a]: y
+Call to a function that contains an error:
+dutch:dutch([red, red, red, red, red, red], [white, white, white, white, white], [white, white, white, white], [blue, red, white, red, red]) = [red, red, red, red, red, red, red, red, red, white, white, white, white, white, white, white, white, white, white, white]
+Please, revise the fourth clause:
+dutch(R, W, B, [blue | L]) ->
+    dutch(R, W, [white | B], L).

@@ -1,0 +1,16 @@
+> edd:dd("db:test()").
+{ok,adios}
+{ok,hola}
+[3]
+[2]
+Please, insert a list of trusted functions [m1:f1/a1, m2:f2/a2 ...]: 
+db:match(adios, [{3, hola}, {2, adios}, {1, hola}, {0, hola}]) = [2]? [y/n/t/d/i/s/u/a]: y
+db:match(hola, [{3, hola}, {2, adios}, {1, hola}, {0, hola}]) = [3]? [y/n/t/d/i/s/u/a]: n
+db:match(3, [{0, hola}]) = []? [y/n/t/d/i/s/u/a]: i
+db:match(3, [{1, hola}, {0, hola}]) = []? [y/n/t/d/i/s/u/a]: i
+db:match(3, [{2, adios}, {1, hola}, {0, hola}]) = []? [y/n/t/d/i/s/u/a]: i
+Call to a function that contains an error:
+db:match(hola, [{3, hola}, {2, adios}, {1, hola}, {0, hola}]) = [3]
+Please, revise the first clause:
+match(Element, [{Key, Element} | Tail]) ->
+    [Key | match(Key, Tail)].

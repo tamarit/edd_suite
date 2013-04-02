@@ -1,0 +1,12 @@
+> edd:dd("substrings:test()").
+Please, insert a list of trusted functions [m1:f1/a1, m2:f2/a2 ...]: 
+substrings:match("ababab", "abab", "abab", 0) = 0? [y/n/t/d/i/s/u/a]: n
+substrings:match("ab", "abab", "abab", 0) = 0? [y/n/t/d/i/s/u/a]: y
+substrings:match("abab", "abab", "abab", 0) = 0? [y/n/t/d/i/s/u/a]: n
+substrings:match("b", "abab", "abab", 0) = 0? [y/n/t/d/i/s/u/a]: y
+substrings:match("bab", "abab", "abab", 0) = 0? [y/n/t/d/i/s/u/a]: y
+Call to a function that contains an error:
+substrings:match("abab", "abab", "abab", 0) = 0
+Please, revise the third clause:
+match([X | MainTail], [X | SubTail], Sub, Acc) ->
+    match(MainTail, Sub, Sub, Acc).

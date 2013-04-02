@@ -1,0 +1,24 @@
+> edd:dd("sieve_module:find_primes_below(10)").
+Please, insert a list of trusted functions [m1:f1/a1, m2:f2/a2 ...]: 
+sieve_module:determine_primes([1, 2, 3, 0, 5, 0, 7, 0, 0, 0], 3, [2, 3]) = [2, 3]? [y/n/t/d/i/s/u/a]: n
+sieve_module:next_prime([1, 2, 3, 0, 5, 0, 7, 0, 0, 0], 8, 10) = false? [y/n/t/d/i/s/u/a]: y
+sieve_module:next_prime([1, 2, 3, 0, 5, 0, 7, 0, 0, 0], 6, 10) = false? [y/n/t/d/i/s/u/a]: n
+sieve_module:next_prime([1, 2, 3, 0, 5, 0, 7, 0, 0, 0], 12, 10) = false? [y/n/t/d/i/s/u/a]: i
+sieve_module:next_prime([1, 2, 3, 0, 5, 0, 7, 0, 0, 0], 10, 10) = false? [y/n/t/d/i/s/u/a]: y
+Call to a function that contains an error:
+sieve_module:next_prime([1, 2, 3, 0, 5, 0, 7, 0, 0, 0], 6, 10) = false
+Please, revise the second clause:
+next_prime(NumList, Index, Length) ->
+    case lists:nth(Index, NumList) of
+      0 -> next_prime(NumList, Index + 2, Length);
+      Prime ->
+          NewNumList = lists:map(fun (A) ->
+                                         if A > Index andalso
+                                              A rem Index == 0 ->
+                                                0;
+                                            true -> A
+                                         end
+                                 end,
+                                 NumList),
+          {Prime, Index, NewNumList}
+    end.

@@ -1,0 +1,25 @@
+> edd:dd("turing:main()").
+==============================
+Turing machine simulator test.
+==============================
+['1','1','1','1']
+Please, insert a list of trusted functions [m1:f1/a1, m2:f2/a2 ...]: d
+The format is not correct
+turing:perform(fun turing:busy_beaver_config/0, fun turing:busy_beaver/2, c, {['0', '1', '1'], []}) = {[], ['1', '1', '1', '1']}? [y/n/t/d/i/s/u/a]: d
+turing:perform(fun turing:busy_beaver_config/0, fun turing:busy_beaver/2, b, {['1', '1'], ['0', '1']}) = {[], ['1', '1', '1', '1']}? [y/n/t/d/i/s/u/a]: d
+turing:perform(fun turing:busy_beaver_config/0, fun turing:busy_beaver/2, a, {[], ['1', '1']}) = {[], ['1', '1', '1', '1']}? [y/n/t/d/i/s/u/a]: d
+turing:perform(fun turing:busy_beaver_config/0, fun turing:busy_beaver/2, a, {['1'], ['1', '1', '1']}) = {[], ['1', '1', '1', '1']}? [y/n/t/d/i/s/u/a]: d
+turing:perform(fun turing:busy_beaver_config/0, fun turing:busy_beaver/2, b, {['1'], []}) = {[], ['1', '1', '1', '1']}? [y/n/t/d/i/s/u/a]: d
+turing:perform(fun turing:busy_beaver_config/0, fun turing:busy_beaver/2, c, {[], ['1', '1', '1', '1']}) = {[], ['1', '1', '1', '1']}? [y/n/t/d/i/s/u/a]: d
+turing:perform(fun turing:busy_beaver_config/0, fun turing:busy_beaver/2, a, {[], []}) = {[], ['1', '1', '1', '1']}? [y/n/t/d/i/s/u/a]: d
+turing:perform(fun turing:busy_beaver_config/0, fun turing:busy_beaver/2, halt, {[], ['1', '1', '1', '1']}) = {[], ['1', '1', '1', '1']}? [y/n/t/d/i/s/u/a]: d
+turing:action(left, '0', {['1', '1'], ['1', '1']}) = {['1'], ['1', '1', '1']}? [y/n/t/d/i/s/u/a]: y
+turing:action(left, '0', {['1'], ['1']}) = {[], ['1', '1']}? [y/n/t/d/i/s/u/a]: y
+turing:action(stay, '0', {[], ['1', '1', '1', '1']}) = {[], ['1', '1', '1', '1']}? [y/n/t/d/i/s/u/a]: y
+turing:symbol([], '0') = {[], '0'}? [y/n/t/d/i/s/u/a]: y
+turing:action(left, '0', {[], ['1', '1']}) = {['0', '1', '1'], []}? [y/n/t/d/i/s/u/a]: n
+Call to a function that contains an error:
+turing:action(left, '0', {[], ['1', '1']}) = {['0', '1', '1'], []}
+Please, revise the first clause:
+action(left, Blank, {[], Right}) ->
+    {[Blank | Right], []}.
