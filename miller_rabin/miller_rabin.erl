@@ -21,8 +21,8 @@ pow_mod(B, 0, M) ->
 pow_mod(B, E, M) ->
   case trunc(E) rem 2 == 0 of
      true  -> trunc(math:pow(pow_mod(B, trunc(E/2), M), 2)) rem M;
-     false -> %trunc(B*pow_mod(B, E-1, M)) rem M
-            trunc(pow_mod(B, E-1, M)) rem M
+     false -> %trunc(B*pow_mod(B, E-1, M)) rem M % RIGHT
+            trunc(pow_mod(B, E-1, M)) rem M % WRONG
   end.
  
 mr_series(N, A, D, S) when N rem 2 == 1 ->
