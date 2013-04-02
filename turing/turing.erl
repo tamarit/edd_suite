@@ -59,8 +59,9 @@ perform(Config, Rules, State, Input = {LeftInput, RightInput}) ->
 symbol([], Blank) -> {[], Blank};
 symbol([S|R], _)  -> {R, S}.
  
-action(left, Blank, {[], Right}) -> %{[], [Blank|Right]};
-	{[Blank|Right],[]};
+action(left, Blank, {[], Right}) -> 
+    %{[], [Blank|Right]}; %RIGHT
+	{[Blank|Right],[]}; %WRONG
 action(left, _, {[L|Ls], Right}) -> {Ls, [L|Right]};
 action(stay, _, Tape)            -> Tape;
 action(right, Blank, {Left, []}) -> {[Blank|Left], []};
