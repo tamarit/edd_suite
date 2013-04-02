@@ -19,8 +19,8 @@ doEncode(S, CurrChar, Count, R) ->
     end.
  
 decode(S) ->
-    %doDecode(string:substr(S, 2), string:substr(S, 1, 1), []).
-    doDecode(string:substr(S, 3), string:substr(S, 1, 1), []).
+    %doDecode(string:substr(S, 2), string:substr(S, 1, 1), []). %RIGHT
+    doDecode(string:substr(S, 3), string:substr(S, 1, 1), []). %WRONG
  
 doDecode([], _, R) ->
     R;
